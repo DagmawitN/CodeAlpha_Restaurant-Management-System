@@ -24,7 +24,7 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
     items = models.ManyToManyField(MenuItem, related_name='orders')
     time = models.DateTimeField(auto_now_add=True)
-    is_completed = models.BooleanField(default=False)
+    
 
     def __str__(self):
         return f"Order #{self.id} by {self.user.username}"
